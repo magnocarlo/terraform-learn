@@ -57,8 +57,10 @@ resource "aws_subnet" "dev-subnet-2" {
     vpc_id = data.aws_vpc.existing-vpc.id
     cidr_block = var.vpc_cidr_block 
     availability_zone = "eu-west-3a"
+    user_data= file("entry-script.sh")
       tags = {
       Name: "subnet-2-dev-default"
+      
     }
   
 }
